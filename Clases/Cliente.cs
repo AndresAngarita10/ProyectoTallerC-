@@ -44,6 +44,19 @@ namespace ProyectoTallerC_.Clases;
             
             Cliente cliente = new Cliente(id, cedula, nombres, apellidos, nroMovil,email,DateTime.Today);
             return cliente;
+        }
 
+        public void MostrarClientes(List<Cliente> clientes){
+            Console.Clear();
+            Console.WriteLine("Listado de Clientes registrados en el sistema");
+            foreach (var cliente in clientes)
+            {
+                Console.WriteLine($"Nombres: {cliente.nombres}");
+                Console.WriteLine($"Apellidos: {cliente.apellidos}");
+                Console.WriteLine($"\tCedula: {cliente.cedula}");
+                Console.WriteLine($"\tCelular: {cliente.nroMovil}");
+                Console.WriteLine($"\tEmail: {cliente.email}");
+                Console.WriteLine("-----------------------------------------");
+            }
         }
     }

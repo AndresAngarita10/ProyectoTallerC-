@@ -14,9 +14,10 @@ namespace ProyectoTallerC_.View
                 Console.Clear();
                 Console.WriteLine("\t ***** Seccion Clientes *****");
                 Console.WriteLine("1. Agregar");
-                Console.WriteLine("2. Asignar Vehiculo a Cliente");
-                Console.WriteLine("3. Ordenes");
-                Console.WriteLine("4.Salir");
+                Console.WriteLine("2. Mostrar Clientes");
+                Console.WriteLine("3. Asignar Vehiculo a Cliente");
+                Console.WriteLine("4. Ordenes");
+                Console.WriteLine("5.Salir");
                 return int.Parse(Console.ReadLine());
         } 
     }

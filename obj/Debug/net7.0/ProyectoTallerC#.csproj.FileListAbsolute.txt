@@ -1,0 +1,15 @@
+/home/skylab-147/Desktop/tallerC#/ProyectoTallerC-/bin/Debug/net7.0/ProyectoTallerC#
+/home/skylab-147/Desktop/tallerC#/ProyectoTallerC-/bin/Debug/net7.0/ProyectoTallerC#.deps.json
+/home/skylab-147/Desktop/tallerC#/ProyectoTallerC-/bin/Debug/net7.0/ProyectoTallerC#.runtimeconfig.json
+/home/skylab-147/Desktop/tallerC#/ProyectoTallerC-/bin/Debug/net7.0/ProyectoTallerC#.dll
+/home/skylab-147/Desktop/tallerC#/ProyectoTallerC-/bin/Debug/net7.0/ProyectoTallerC#.pdb
+/home/skylab-147/Desktop/tallerC#/ProyectoTallerC-/obj/Debug/net7.0/ProyectoTallerC#.csproj.AssemblyReference.cache
+/home/skylab-147/Desktop/tallerC#/ProyectoTallerC-/obj/Debug/net7.0/ProyectoTallerC#.GeneratedMSBuildEditorConfig.editorconfig
+/home/skylab-147/Desktop/tallerC#/ProyectoTallerC-/obj/Debug/net7.0/ProyectoTallerC#.AssemblyInfoInputs.cache
+/home/skylab-147/Desktop/tallerC#/ProyectoTallerC-/obj/Debug/net7.0/ProyectoTallerC#.AssemblyInfo.cs
+/home/skylab-147/Desktop/tallerC#/ProyectoTallerC-/obj/Debug/net7.0/ProyectoTallerC#.csproj.CoreCompileInputs.cache
+/home/skylab-147/Desktop/tallerC#/ProyectoTallerC-/obj/Debug/net7.0/ProyectoTallerC#.dll
+/home/skylab-147/Desktop/tallerC#/ProyectoTallerC-/obj/Debug/net7.0/refint/ProyectoTallerC#.dll
+/home/skylab-147/Desktop/tallerC#/ProyectoTallerC-/obj/Debug/net7.0/ProyectoTallerC#.pdb
+/home/skylab-147/Desktop/tallerC#/ProyectoTallerC-/obj/Debug/net7.0/ProyectoTallerC#.genruntimeconfig.cache
+/home/skylab-147/Desktop/tallerC#/ProyectoTallerC-/obj/Debug/net7.0/ref/ProyectoTallerC#.dll

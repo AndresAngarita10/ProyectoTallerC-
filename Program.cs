@@ -25,12 +25,19 @@ internal class Program
                         switch (opcionCliente)
                         {
                             case 1:
-
+                                Cliente cliente = new Cliente();
+                                Cliente clienteNuevo = cliente.CrearCliente();
+                                listaTallers[0].ListaClientes.Add(clienteNuevo);
+                                cliente.MostrarClientes(listaTallers[0].listaClientes);
+                                Console.ReadKey();
+                                break;
+                            case 2:
+                                
                                 break;
                             default:
                                 break;
                         }
-                    } while (opcionCliente != 6);
+                    } while (opcionCliente != 5);
                     break;
                 case 2:
                     
