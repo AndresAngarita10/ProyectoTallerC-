@@ -53,6 +53,7 @@ namespace ProyectoTallerC_.Clases;
             {
                 Console.WriteLine($"Nombres: {cliente.nombres}");
                 Console.WriteLine($"Apellidos: {cliente.apellidos}");
+                Console.WriteLine($"\tId: {cliente.id}");
                 Console.WriteLine($"\tCedula: {cliente.cedula}");
                 Console.WriteLine($"\tCelular: {cliente.nroMovil}");
                 Console.WriteLine($"\tEmail: {cliente.email}");
