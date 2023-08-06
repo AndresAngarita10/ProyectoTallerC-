@@ -29,12 +29,12 @@ namespace ProyectoTallerC_.Clases;
 
         public Taller CrearTaller(){
             Console.Clear();
-            string id = Guid.NewGuid().ToString("N").Substring(0, 10);
+            string id = Guid.NewGuid().ToString("N")[..10];// .Substring(0, 10); el sistema me cambio esto
             Console.WriteLine("Ingrese el Nombre del taller");
             string nombreTaller = Console.ReadLine();
             Console.WriteLine("Ingrese el Nombre del propietario del taller");
             string nombrePropietario = Console.ReadLine();
-            Taller taller = new Taller(id, nombreTaller, nombrePropietario);
+            Taller taller = new(id, nombreTaller, nombrePropietario);
             return taller;
 
         }

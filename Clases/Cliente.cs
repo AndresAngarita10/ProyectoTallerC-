@@ -30,7 +30,7 @@ namespace ProyectoTallerC_.Clases;
 
         public Cliente CrearCliente(){
             Console.Clear();
-            string id = Guid.NewGuid().ToString("N").Substring(0, 10);
+            string id = Guid.NewGuid().ToString("N")[..10];// .Substring(0, 10); el sistema me cambio esto
             Console.WriteLine("Ingrese la cedula del cliente");
             string cedula = Console.ReadLine();
             Console.WriteLine("Ingrese los nombres del cliente");
@@ -42,7 +42,7 @@ namespace ProyectoTallerC_.Clases;
             Console.WriteLine("Ingrese el email del cliente");
             string email = Console.ReadLine();
             
-            Cliente cliente = new Cliente(id, cedula, nombres, apellidos, nroMovil,email,DateTime.Today);
+            Cliente cliente = new(id, cedula, nombres, apellidos, nroMovil,email,DateTime.Today);
             return cliente;
         }
 

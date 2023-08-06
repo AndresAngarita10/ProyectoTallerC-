@@ -5,10 +5,10 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        List<Taller> listaTallers = new List<Taller>( ); 
-        Taller taller = new Taller("1010asd",  "Taller Mi laton",  "Andres");
+        List<Taller> listaTallers = new( ); 
+        Taller taller = new("1010asd",  "Taller Mi laton",  "Andres");
         listaTallers.Add(taller);
-        MainMenu menu = new MainMenu();
+        MainMenu menu = new();
         int opcion = 0;
         do
         {
@@ -18,14 +18,14 @@ internal class Program
                 case 1:
                 //////Menu Clientes
                     int opcionCliente = 0;
-                    MenuClientes menuClientes = new MenuClientes();
+                    MenuClientes menuClientes = new();
                     do
                     {
                         opcionCliente = menuClientes.MenuPrincipal();
                         switch (opcionCliente)
                         {
                             case 1:
-                                Cliente cliente = new Cliente();
+                                Cliente cliente = new();
                                 Cliente clienteNuevo = cliente.CrearCliente();
                                 listaTallers[0].ListaClientes.Add(clienteNuevo);
                                 cliente.MostrarClientes(listaTallers[0].listaClientes);
