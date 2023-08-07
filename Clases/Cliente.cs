@@ -49,15 +49,31 @@ namespace ProyectoTallerC_.Clases;
         public void MostrarClientes(List<Cliente> clientes){
             Console.Clear();
             Console.WriteLine("Listado de Clientes registrados en el sistema");
+            int contador = 1 ;
             foreach (var cliente in clientes)
             {
-                Console.WriteLine($"Nombres: {cliente.nombres}");
+                Console.WriteLine($"#{contador}  Nombres: {cliente.nombres}");
                 Console.WriteLine($"Apellidos: {cliente.apellidos}");
                 Console.WriteLine($"\tId: {cliente.id}");
                 Console.WriteLine($"\tCedula: {cliente.cedula}");
                 Console.WriteLine($"\tCelular: {cliente.nroMovil}");
                 Console.WriteLine($"\tEmail: {cliente.email}");
+                Console.WriteLine($"\tFecha Registro: {cliente.fechaRegistro}");
                 Console.WriteLine("-----------------------------------------");
+                contador++;
+            }
+        }
+
+        public Cliente BuscarCliente(List<Cliente> clientes){
+            MostrarClientes(clientes);
+            Console.WriteLine("Ingrese el numero del cliente a seleccionar");
+            int opcion = int.Parse(Console.ReadLine());
+            if(opcion > 0 && opcion <= clientes.Count){
+                //Console.WriteLine("Este es el objeto a retornar");
+                //Console.WriteLine(clientes[opcion-1]);
+                return clientes[opcion-1];
+            }else {
+                return BuscarCliente(clientes);
             }
         }
     }

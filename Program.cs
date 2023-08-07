@@ -9,7 +9,7 @@ internal class Program
         Taller taller = new("1010asd",  "Taller Mi laton",  "Andres");
         listaTallers.Add(taller);
         MainMenu menu = new();
-        int opcion = 0;
+        int opcion;
         do
         {
             opcion = menu.Menu();
@@ -17,7 +17,7 @@ internal class Program
             {
                 case 1:
                 //////Menu Clientes
-                    int opcionCliente = 0;
+                    int opcionCliente;
                     MenuClientes menuClientes = new();
                     do
                     {
@@ -25,6 +25,7 @@ internal class Program
                         switch (opcionCliente)
                         {
                             case 1:
+                                //? Creando cliente
                                 Cliente cliente = new();
                                 Cliente clienteNuevo = cliente.CrearCliente();
                                 listaTallers[0].ListaClientes.Add(clienteNuevo);
@@ -32,7 +33,21 @@ internal class Program
                                 Console.ReadKey();
                                 break;
                             case 2:
-                                
+                                Console.WriteLine("Mostrando todos los clientes del sistema");
+                                Cliente clienteMostrar = new();
+                                clienteMostrar.MostrarClientes(listaTallers[0].listaClientes);
+                                Console.ReadKey();
+                                break;
+                            case 3:
+                                Cliente clienteAddVehiculo = new();
+                                Cliente clienteEncontrado = clienteAddVehiculo.BuscarCliente(listaTallers[0].listaClientes);
+                                Console.WriteLine("Cliente seleccionado: "+clienteEncontrado.nombres);
+                                Vehiculo nuevoVehiculo = new();
+                                Vehiculo nuevoV = nuevoVehiculo.CrearVehiculo();
+                                Console.WriteLine("Cliente seleccionado: "+clienteEncontrado.nombres);
+                                clienteEncontrado.ListaVehiculos.Add(nuevoV);
+                                nuevoV.MostrarVehiculosNombreModelo(clienteEncontrado.listaVehiculos);
+                                Console.ReadKey();
                                 break;
                             default:
                                 break;
