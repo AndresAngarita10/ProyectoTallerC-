@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ProyectoTallerC_.View
-{
+namespace ProyectoTallerC_.View;
+
     public class MenuClientes
     {
         public MenuClientes() {}
@@ -21,4 +21,3 @@ namespace ProyectoTallerC_.View
                 return int.Parse(Console.ReadLine());
         } 
     }
-}

@@ -68,4 +68,28 @@ namespace ProyectoTallerC_.Clases;
                 contador++;
             }
         }
+
+        
+        public void MostrarVehiculosXCliente(Cliente cliente){
+            Console.Clear();
+            Console.WriteLine($"\t\t Vehiculos del Cliente --> {cliente.nombres}");
+            int contador = 1;
+            foreach (var vehiculo in cliente.listaVehiculos)
+            {
+                Console.WriteLine($"#{contador} -> Placa: {vehiculo.placaId}, Nombre: {vehiculo.nombre}, Marca: {vehiculo.marca}");
+            }
+        }
+
+        public Vehiculo SeleccionVehiculo (Cliente cliente){
+            MostrarVehiculosXCliente(cliente);
+            Console.WriteLine("\t\t Seleccione el vehiculo");
+            int seleccion = int.Parse(Console.ReadLine());
+            if (seleccion >0 && seleccion <= cliente.listaVehiculos.Count){
+                return cliente.listaVehiculos[seleccion-1];
+            }else if ( seleccion == 0){
+                return null;
+            }else {
+                return SeleccionVehiculo(cliente);
+            }
+        }
     }
