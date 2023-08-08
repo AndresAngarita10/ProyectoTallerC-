@@ -79,6 +79,10 @@ public class Empleado : Persona
                 return BuscarEmpleado(empleados);
             }
         }
+
+        public Empleado BuscarEmpleadoXId(List<Empleado> empleados, id){
+            
+        }
         
         public Empleado BuscarEmpleadoHabilitado(List<Empleado> empleados){
             MostrarEmpleadosEstado(empleados, true);

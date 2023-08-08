@@ -145,6 +145,8 @@ internal class Program
                                 OrdenServicio ordenS = new(clienteSeleccionado.Id, vehiculoSeleccionado.PLacaId, diagnosticos, km);
                                 // list.FindIndex(x => x.Equals(target)) != -1;
                                 //Console.WriteLine($"Este el el indice del cliente {indiceCliente}");
+                                OrdenAprobacion ordenAprobacion = new(ordenS.id,DateTime.Today);
+                                ordenS.OrdenAprobacion = ordenAprobacion;
                                 listaTallers[0].listaClientes[indiceCliente].ordenesServicio.Add(ordenS);
                                 break;
                             case 2:
@@ -158,13 +160,13 @@ internal class Program
                                 Console.Clear();
                                 Console.WriteLine("Seleccione la orden a trabajar");
                                 OrdenServicio ordenSel = new();
-                                OrdenServicio ordenSelect = ordenSel.SeleccionarOrden(listaTallers[0].listaClientes[indiceClie].ordenesServicio);
-                                Console.Clear();
-                                Console.WriteLine($"Selecciono la orden del vehiculo placa: {ordenSelect.idVehiculo}");
-                                Console.WriteLine("\t\t ---------");
                                 int opcionesSegundoMenu;
                                 do
                                 {
+                                    OrdenServicio ordenSelect = ordenSel.SeleccionarOrden(listaTallers[0].listaClientes[indiceClie].ordenesServicio);
+                                    Console.Clear();
+                                    Console.WriteLine($"Selecciono la orden del vehiculo placa: {ordenSelect.idVehiculo}");
+                                    Console.WriteLine("\t\t ---------");
                                     opcionesSegundoMenu = menuOrdenSer.MenuOIpcionesOrden();
                                     switch (opcionesSegundoMenu)
                                     {
@@ -172,7 +174,16 @@ internal class Program
 
                                             break;
                                         case 2:
-
+                                            int opcAddEmpleado;
+                                            do
+                                            {
+                                                Console.WriteLine("Añadir empleado a la orden");
+                                                Empleado empleado0 = new();
+                                                Empleado seleccionado1 = empleado0.BuscarEmpleado(listaTallers[codigoTaller].listaEmpleado);
+                                                ordenSelect.idEmpleado.Add(seleccionado1.Id);
+                                                Console.WriteLine("Para agregar otro empleado ingrese 1, para salir ingrese 0");
+                                                opcAddEmpleado = int.Parse(Console.ReadLine());
+                                            } while (opcAddEmpleado!=0);
                                             break;
                                         case 3:
 
@@ -181,14 +192,58 @@ internal class Program
 
                                             break;
                                         case 5:
-
+                                            Console.WriteLine("Agregar Repuestos a la orden");
+                                            Empleado empleado1 = new();
+                                            Empleado seleccionado = empleado1.BuscarEmpleado(listaTallers[codigoTaller].listaEmpleado);
+                                            int opcMasRepuestos;
+                                            do
+                                            {
+                                                Repuesto r = new();
+                                                Repuesto respuestoNuevo = r.CrearRepuesto(ordenSelect.Id, seleccionado.Id);
+                                                ordenSelect.ordenAprobacion.repuestos.Add(respuestoNuevo);
+                                                Console.WriteLine("Para agregar otro repuesto ingrese 1, para salir ingrese 0");
+                                                opcMasRepuestos = int.Parse(Console.ReadLine());
+                                            } while (opcMasRepuestos != 0);
                                             break;
-
+                                        case 6:
+                                            //!Aprbar Repuestos
+                                            if(ordenSelect.ordenAprobacion.repuestos.Count > 0){
+                                                Repuesto repuesto = new();
+                                                repuesto.AprobarRepuestos(ordenSelect.ordenAprobacion.repuestos);
+                                                Console.WriteLine("Terminado");
+                                                Console.ReadKey();
+                                            }else {
+                                                Console.WriteLine("No hay repuestos");
+                                                Console.ReadKey();
+                                            }
+                                            break;
+                                        case 7:
+                                            break;
                                         default:
                                             break;
                                     }
-                                } while (opcionesSegundoMenu != 6);
+                                } while (opcionesSegundoMenu != 8);
                                 break;
+                            case 3: 
+                                Console.Clear();
+                                Console.WriteLine("Mostrando ordenes activas");
+                                Console.WriteLine("Primero seleccionar cliente ");
+                                Cliente clienteOpp = new();
+                                Cliente clienteSelect = clienteOpp.BuscarClienteXCC(listaTallers[codigoTaller].listaClientes);
+                                int indiceClien = listaTallers[0].listaClientes.FindIndex(x => x.id.Equals(clienteSelect.Id));
+                                OrdenServicio ordencita = new();
+                                ordencita.MostrarOrdenesSinTerminar(listaTallers[0].listaClientes[indiceClien].OrdenesServicio);
+                                break;
+                            case 4:
+                                Console.Clear();
+                                Console.WriteLine("Mostrando ordenes terminadas");
+                                Console.WriteLine("Primero seleccionar cliente ");
+                                Cliente clienteOpp2 = new();
+                                Cliente clienteSelect2 = clienteOpp2.BuscarClienteXCC(listaTallers[codigoTaller].listaClientes);
+                                int indiceClien2 = listaTallers[0].listaClientes.FindIndex(x => x.id.Equals(clienteSelect2.Id));
+                                OrdenServicio ordencita2 = new();
+                                ordencita2.MostrarOrdenesTerminadas(listaTallers[0].listaClientes[indiceClien2].OrdenesServicio);
+                            break;
                             default:
                                 break;
                         }
@@ -201,5 +256,7 @@ internal class Program
                     break;
             }
         } while (opcion != 4);
+        
+        
     }
 }

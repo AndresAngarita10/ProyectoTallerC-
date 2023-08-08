@@ -29,7 +29,9 @@ namespace ProyectoTallerC_.View;
             Console.WriteLine("3. Añadir diagnostico");
             Console.WriteLine("4. Retirar empleado");
             Console.WriteLine("5. Añadir repuestos ");
-            Console.WriteLine("6.Salir");
+            Console.WriteLine("6. Aprobar repuestos ");
+            Console.WriteLine("7. Mostrar Lista aprobacion");
+            Console.WriteLine("8.Salir");
             return int.Parse(Console.ReadLine());
         } 
     }

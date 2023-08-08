@@ -155,5 +155,12 @@ namespace ProyectoTallerC_.Clases;
             }
             return null;
         }
+/* 
+        public int BuscarIndiceCliente(){
+            Console.WriteLine("Primero seleccionar cliente ");
+            Cliente clienteOp = new();
+            Cliente clienteSelec = clienteOp.BuscarClienteXCC(listaTallers[codigoTaller].listaClientes);
+            return listaTallers[0].listaClientes.FindIndex(x => x.id.Equals(clienteSelec.Id));
+        } */
 
     }

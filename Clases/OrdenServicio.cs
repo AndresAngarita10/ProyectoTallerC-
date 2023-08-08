@@ -15,6 +15,7 @@ namespace ProyectoTallerC_.Clases
         public DateTime fechaOrden;
         public bool terminado;
         public string kilometraje;
+        public OrdenAprobacion ordenAprobacion;
         
         public string Id{ get => this.id; set => this.id = value;}
         public List<Diagnostico> Diagnostico{get => this.diagnostico; set => this.diagnostico = value;}
@@ -24,11 +25,12 @@ namespace ProyectoTallerC_.Clases
         public DateTime FechaOrden{get => this.fechaOrden; set => this.fechaOrden = value;}
         public bool Termiando { get => this.terminado; set => this.terminado = value; }
         public string Kilometraje { get => this.kilometraje; set => this.kilometraje = value; }
+        public OrdenAprobacion OrdenAprobacion { get => this.ordenAprobacion; set => this.ordenAprobacion = value; }
 
         public OrdenServicio(){}
 
-        public OrdenServicio(string _idCliente, string _idVehiculo, List<Diagnostico> listaDiagnostico, string _kilometraje ){
-            this.id = Guid.NewGuid().ToString("N")[..10];;
+        public OrdenServicio(string _idCliente, string _idVehiculo, List<Diagnostico> listaDiagnostico, string _kilometraje/*  OrdenAprobacion _ordenAprobacion */ ){
+            this.id = Guid.NewGuid().ToString("N")[..10];
             this.diagnostico = listaDiagnostico;
             this.idCliente = _idCliente;
             this.idVehiculo = _idVehiculo;
@@ -36,6 +38,7 @@ namespace ProyectoTallerC_.Clases
             this.terminado = false;
             this.fechaOrden = DateTime.Today;
             this.kilometraje = _kilometraje;
+            //this.ordenAprobacion = _ordenAprobacion;
         }
 
         public void MostrarOrdenesSinTerminar(List<OrdenServicio> ordenes){
@@ -44,10 +47,25 @@ namespace ProyectoTallerC_.Clases
             foreach (var orden in ordenes)
             {
                 if(orden.terminado == false){
-                    Console.WriteLine($"#{contador} - Placa: {orden.idVehiculo}");
+                    Console.WriteLine($"#{contador} - Placa: {orden.idVehiculo}, Fecha: {orden.fechaOrden}");
                     contador++;
                 }
             }
+            Console.ReadLine();
+        }
+
+
+        public void MostrarOrdenesTerminadas(List<OrdenServicio> ordenes){
+            Console.WriteLine("Ordenes Terminadas");
+            int contador = 1;
+            foreach (var orden in ordenes)
+            {
+                if(orden.terminado == true){
+                    Console.WriteLine($"#{contador} - Placa: {orden.idVehiculo}, Fecha: {orden.fechaOrden}");
+                    contador++;
+                }
+            }
+            Console.ReadLine();
         }
 
         public OrdenServicio SeleccionarOrden(List<OrdenServicio> ordenes){

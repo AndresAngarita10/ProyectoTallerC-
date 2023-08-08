@@ -8,19 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\andre\\.nuget\\packages\\": {}
+    "/home/arteN01-039/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\andre\\OneDrive\\Documentos\\Campus\\C#\\ProyectoTallerC-\\ProyectoTallerC#.csproj",
+      "projectUniqueName": "/home/arteN01-039/Documents/AndresAngarita C#/clase08-08/ProyectoTallerC-/ProyectoTallerC#.csproj",
       "projectName": "ProyectoTallerC#",
-      "projectPath": "C:\\Users\\andre\\OneDrive\\Documentos\\Campus\\C#\\ProyectoTallerC-\\ProyectoTallerC#.csproj",
-      "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\andre\\OneDrive\\Documentos\\Campus\\C#\\ProyectoTallerC-\\obj\\",
+      "projectPath": "/home/arteN01-039/Documents/AndresAngarita C#/clase08-08/ProyectoTallerC-/ProyectoTallerC#.csproj",
+      "packagesPath": "/home/arteN01-039/.nuget/packages/",
+      "outputPath": "/home/arteN01-039/Documents/AndresAngarita C#/clase08-08/ProyectoTallerC-/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/home/arteN01-039/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -59,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.109/RuntimeIdentifierGraph.json"
       }
     }
   }
