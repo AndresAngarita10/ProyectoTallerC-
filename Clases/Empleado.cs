@@ -80,6 +80,23 @@ public class Empleado : Persona
             }
         }
         
+        public Empleado BuscarEmpleadoHabilitado(List<Empleado> empleados){
+            MostrarEmpleadosEstado(empleados, true);
+            Console.WriteLine("Ingrese el numero del empleado a seleccionar o ingrese '0' para salir");
+            int opcion = int.Parse(Console.ReadLine());
+            if(opcion > 0 && opcion <= empleados.Count){
+                //Console.WriteLine("Este es el objeto a retornar");
+                //Console.WriteLine(clientes[opcion-1]);
+                return empleados[opcion-1];
+            }else if (opcion == 0){
+                Console.WriteLine("Saliendo.... ");
+                Console.ReadKey();
+                return null;
+            }else {
+                return BuscarEmpleadoHabilitado(empleados);
+            }
+        }
+        
         public void EliminarEmpleado(List<Empleado> empleados){
             MostrarEmpleados(empleados);
             Console.WriteLine("Ingrese el numero del empleado a eliminar o ingrese '0' para salir");

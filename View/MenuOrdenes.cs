@@ -26,9 +26,10 @@ namespace ProyectoTallerC_.View;
             Console.WriteLine("\t ***** Opciones de orden *****");
             Console.WriteLine("1. Modificar Orden");
             Console.WriteLine("2. Añadir empleado");
-            Console.WriteLine("2. Retirar empleado");
-            Console.WriteLine("3. Mostrar Ordenes Terminadas ---------Falta revisarla");
-            Console.WriteLine("5.Salir");
+            Console.WriteLine("3. Añadir diagnostico");
+            Console.WriteLine("4. Retirar empleado");
+            Console.WriteLine("5. Añadir repuestos ");
+            Console.WriteLine("6.Salir");
             return int.Parse(Console.ReadLine());
         } 
     }

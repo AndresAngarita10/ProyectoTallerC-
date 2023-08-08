@@ -144,4 +144,16 @@ namespace ProyectoTallerC_.Clases;
             }
         }
 
+        public Cliente BuscarClienteXCC(List<Cliente> clientes){
+            Console.WriteLine("Ingrese la cedula del cliente");
+            string cedula = Console.ReadLine();
+            foreach (var cliente in clientes)
+            {
+                if(cedula.Equals(cliente.cedula)){
+                    return cliente;
+                }
+            }
+            return null;
+        }
+
     }
