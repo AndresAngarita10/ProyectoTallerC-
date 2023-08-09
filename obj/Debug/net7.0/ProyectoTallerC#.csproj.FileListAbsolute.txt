@@ -43,3 +43,18 @@ C:/Users/andre/OneDrive/Documentos/Campus/C#/ProyectoTallerC-/obj/Debug/net7.0/r
 /home/skylab-147/Documents/andresC#/Taller/ProyectoTallerC-/obj/Debug/net7.0/ProyectoTallerC#.pdb
 /home/skylab-147/Documents/andresC#/Taller/ProyectoTallerC-/obj/Debug/net7.0/ProyectoTallerC#.genruntimeconfig.cache
 /home/skylab-147/Documents/andresC#/Taller/ProyectoTallerC-/obj/Debug/net7.0/ref/ProyectoTallerC#.dll
+/home/arteN01-039/Documents/AndresAngarita C#/clase08-09/ProyectoTallerC-/bin/Debug/net7.0/ProyectoTallerC#
+/home/arteN01-039/Documents/AndresAngarita C#/clase08-09/ProyectoTallerC-/bin/Debug/net7.0/ProyectoTallerC#.deps.json
+/home/arteN01-039/Documents/AndresAngarita C#/clase08-09/ProyectoTallerC-/bin/Debug/net7.0/ProyectoTallerC#.runtimeconfig.json
+/home/arteN01-039/Documents/AndresAngarita C#/clase08-09/ProyectoTallerC-/bin/Debug/net7.0/ProyectoTallerC#.dll
+/home/arteN01-039/Documents/AndresAngarita C#/clase08-09/ProyectoTallerC-/bin/Debug/net7.0/ProyectoTallerC#.pdb
+/home/arteN01-039/Documents/AndresAngarita C#/clase08-09/ProyectoTallerC-/obj/Debug/net7.0/ProyectoTallerC#.csproj.AssemblyReference.cache
+/home/arteN01-039/Documents/AndresAngarita C#/clase08-09/ProyectoTallerC-/obj/Debug/net7.0/ProyectoTallerC#.GeneratedMSBuildEditorConfig.editorconfig
+/home/arteN01-039/Documents/AndresAngarita C#/clase08-09/ProyectoTallerC-/obj/Debug/net7.0/ProyectoTallerC#.AssemblyInfoInputs.cache
+/home/arteN01-039/Documents/AndresAngarita C#/clase08-09/ProyectoTallerC-/obj/Debug/net7.0/ProyectoTallerC#.AssemblyInfo.cs
+/home/arteN01-039/Documents/AndresAngarita C#/clase08-09/ProyectoTallerC-/obj/Debug/net7.0/ProyectoTallerC#.csproj.CoreCompileInputs.cache
+/home/arteN01-039/Documents/AndresAngarita C#/clase08-09/ProyectoTallerC-/obj/Debug/net7.0/ProyectoTallerC#.dll
+/home/arteN01-039/Documents/AndresAngarita C#/clase08-09/ProyectoTallerC-/obj/Debug/net7.0/refint/ProyectoTallerC#.dll
+/home/arteN01-039/Documents/AndresAngarita C#/clase08-09/ProyectoTallerC-/obj/Debug/net7.0/ProyectoTallerC#.pdb
+/home/arteN01-039/Documents/AndresAngarita C#/clase08-09/ProyectoTallerC-/obj/Debug/net7.0/ProyectoTallerC#.genruntimeconfig.cache
+/home/arteN01-039/Documents/AndresAngarita C#/clase08-09/ProyectoTallerC-/obj/Debug/net7.0/ref/ProyectoTallerC#.dll

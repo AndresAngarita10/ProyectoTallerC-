@@ -77,6 +77,7 @@ namespace ProyectoTallerC_.Clases;
             foreach (var vehiculo in cliente.listaVehiculos)
             {
                 Console.WriteLine($"#{contador} -> Placa: {vehiculo.placaId}, Nombre: {vehiculo.nombre}, Marca: {vehiculo.marca}");
+                contador++;
             }
         }
 
