@@ -11,7 +11,7 @@ namespace ProyectoTallerC_.Clases
         public List<Diagnostico> diagnostico;
         public string idCliente;
         public string idVehiculo;
-        public List<string> idEmpleado;
+        public List<string> idEmpleado = new();
         public DateTime fechaOrden;
         public bool terminado;
         public string kilometraje;
@@ -51,7 +51,7 @@ namespace ProyectoTallerC_.Clases
                     contador++;
                 }
             }
-            Console.ReadLine();
+            //Console.ReadKey();
         }
 
 
@@ -77,6 +77,34 @@ namespace ProyectoTallerC_.Clases
             }else{
                 return SeleccionarOrden(ordenes);
             }
+
+        }
+
+        public void MostrarOrdenCompleta(OrdenServicio ordenes, List<Cliente> clientes, List<Empleado> empleados){
+            Cliente cli = new();
+            Cliente cl = cli.BuscarClienteXId(clientes,ordenes.IdCliente);
+            Console.WriteLine("\t========== Datos de la orden ==========");
+            Console.WriteLine($"Nro Orden: {ordenes.Id} \t\t Fecha: {ordenes.fechaOrden}");
+            Console.WriteLine($"Cedula Cliente: {cl.Cedula} \t Nombres: {cl.nombres}");
+            Console.WriteLine("\n\t========== Datos del vehiculo ==========");
+            Console.WriteLine($"Placa: {ordenes.IdVehiculo} \t Kilometraje: {ordenes.Kilometraje}");
+            Console.WriteLine("\n\t========== Personal a cargo ==========");
+            foreach (var empleado in ordenes.IdEmpleado)
+            {
+                Empleado empleado1 = new ();
+                Empleado emple = empleado1.BuscarEmpleadoXId(empleados,empleado);
+                Console.WriteLine($" - {emple.Nombres}, CC:{emple.Cedula}, Especialidad: {emple.Especialidad}");
+            }
+            Console.WriteLine("\n\t========== Diagnosticos ==========");
+            foreach (var diag in ordenes.Diagnostico)
+            {
+                Empleado empleado1 = new ();
+                Empleado emple = empleado1.BuscarEmpleadoXId(empleados,diag.idEmpleado);
+                Console.WriteLine($"Nombre Empleado: {emple.Nombres} - CC: {emple.Cedula}");
+                Console.WriteLine($"\tDiagnostico:");
+                Console.WriteLine($"\t\t\t{diag.diagnosticoEmpleado}\n");
+            }
+            Console.ReadKey();
 
         }
 

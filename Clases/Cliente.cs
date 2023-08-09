@@ -11,6 +11,7 @@ namespace ProyectoTallerC_.Clases;
         public List<Vehiculo> listaVehiculos;
         public List<Factura> listaFacturas;
         public List<OrdenServicio> ordenesServicio;
+
         public List<Vehiculo> ListaVehiculos{get => this.listaVehiculos; set => this.listaVehiculos = value;}
         public List<Factura> ListaFacturas{get => this.listaFacturas; set => this.listaFacturas = value;}
         public List<OrdenServicio> OrdenesServicio{get => this.ordenesServicio; set => this.ordenesServicio = value;}
@@ -150,6 +151,16 @@ namespace ProyectoTallerC_.Clases;
             foreach (var cliente in clientes)
             {
                 if(cedula.Equals(cliente.cedula)){
+                    return cliente;
+                }
+            }
+            return null;
+        }
+
+        public Cliente BuscarClienteXId(List<Cliente> clientes, string Id){
+            foreach (var cliente in clientes)
+            {
+                if(Id.Equals(cliente.Id)){
                     return cliente;
                 }
             }

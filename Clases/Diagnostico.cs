@@ -18,9 +18,9 @@ namespace ProyectoTallerC_.Clases;
         public DateTime FechaDiagnostico { get => this.fechaDiagnostico; set => this.fechaDiagnostico = value; }
 
         public Diagnostico(){}
-        public Diagnostico(string _id, string _idEmpleado, string _diagnosticoEmpleado)
+        public Diagnostico(string _idEmpleado, string _diagnosticoEmpleado)
         {
-            this.id = _id;
+            this.id = Guid.NewGuid().ToString("N")[..10];
             this.idEmpleado = _idEmpleado;
             this.diagnosticoEmpleado = _diagnosticoEmpleado;
             this.fechaDiagnostico = DateTime.Today;
@@ -28,10 +28,9 @@ namespace ProyectoTallerC_.Clases;
 
         public Diagnostico CrearDiagnostico(string idEmpleado){
             Console.Clear();
-            string id = Guid.NewGuid().ToString("N")[..10];// .Substring(0, 10); el sistema me cambio esto
             Console.WriteLine("Ingrese el diagnostico dado por el empleado");
             string diagnosticoEmple = Console.ReadLine();
-            Diagnostico diagnostico = new(id, idEmpleado, diagnosticoEmple);
+            Diagnostico diagnostico = new(idEmpleado, diagnosticoEmple);
             return diagnostico;
 
         }

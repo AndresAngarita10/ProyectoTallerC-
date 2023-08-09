@@ -80,8 +80,14 @@ public class Empleado : Persona
             }
         }
 
-        public Empleado BuscarEmpleadoXId(List<Empleado> empleados, id){
-            
+        public Empleado BuscarEmpleadoXId(List<Empleado> empleados,string id){
+            foreach (var item in empleados)
+            {
+                if(item.Id.Equals(id)){
+                    return item;
+                }
+            }
+            return null;
         }
         
         public Empleado BuscarEmpleadoHabilitado(List<Empleado> empleados){

@@ -65,7 +65,7 @@ namespace ProyectoTallerC_.Clases;
                 Console.WriteLine("\t\t ------");
                 Console.WriteLine("Para aprobar ingrese 1, Para no aprobar ingrese 0");
                 int validador = int.Parse(Console.ReadLine());
-                if(validador >= 0 && validador <= 0){
+                if(validador >= 0 && validador <= 1){
                     if(validador == 1){
                         Console.WriteLine("Repuesto aprobado");
                         repuesto.Estado = true;

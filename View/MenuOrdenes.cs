@@ -31,7 +31,8 @@ namespace ProyectoTallerC_.View;
             Console.WriteLine("5. Añadir repuestos ");
             Console.WriteLine("6. Aprobar repuestos ");
             Console.WriteLine("7. Mostrar Lista aprobacion");
-            Console.WriteLine("8.Salir");
+            Console.WriteLine("8. Mostrar Orden");
+            Console.WriteLine("9.Salir");
             return int.Parse(Console.ReadLine());
         } 
     }

@@ -17,6 +17,37 @@ internal class Program
         listaTallers[0].listaEmpleado.Add(empleadoadd1);
         Empleado empleadoadd2 = new("10555Aasad","1095","diego","andrade","54545","davidddd@","Electricista");
         listaTallers[0].listaEmpleado.Add(empleadoadd2);
+
+
+        Diagnostico diagnostico1 = new ("1095Aasad", "Carro no prende motor");
+        Diagnostico diagnostico2 = new ("10555Aasad", "Carro no prende luces de freno");
+        List<Diagnostico> listaDiagnostico = new()
+        {
+            diagnostico1,
+            diagnostico2
+        };
+        OrdenServicio ordenServicio1 = new("100asd","IPR520", listaDiagnostico,"60000");
+        ordenServicio1.idEmpleado.Add("1095Aasad");
+        ordenServicio1.idEmpleado.Add("10555Aasad");
+        OrdenAprobacion ordenAprobacion1 = new(ordenServicio1.Id, DateTime.Today);
+        Repuesto repuesto1 = new(ordenAprobacion1.Id, "1095Aasad", "Culata", 1250000, 1);
+        Repuesto repuesto2 = new(ordenAprobacion1.Id, "1095Aasad", "Valvulas", 250000, 4);
+        Repuesto repuesto3 = new(ordenAprobacion1.Id, "1095Aasad", "Piston", 450000, 2);
+
+        Repuesto repuesto4 = new(ordenAprobacion1.Id, "10555Aasad", "Bombillo LED", 250000, 2);
+        Repuesto repuesto5 = new(ordenAprobacion1.Id, "10555Aasad", "Cableado puerta piloto", 500000, 1);
+        Repuesto repuesto6 = new(ordenAprobacion1.Id, "10555Aasad", "Bombillo stop", 25000, 2);
+
+        ordenAprobacion1.Repuestos.Add(repuesto1);
+        ordenAprobacion1.Repuestos.Add(repuesto2);
+        ordenAprobacion1.Repuestos.Add(repuesto3);
+        ordenAprobacion1.Repuestos.Add(repuesto4);
+        ordenAprobacion1.Repuestos.Add(repuesto5);
+        ordenAprobacion1.Repuestos.Add(repuesto6);
+
+        ordenServicio1.ordenAprobacion = ordenAprobacion1;
+        listaTallers[codigoTaller].listaClientes[0].OrdenesServicio.Add(ordenServicio1);
+
         MainMenu menu = new();
         int opcion;
         do
@@ -180,7 +211,7 @@ internal class Program
                                                 Console.WriteLine("Añadir empleado a la orden");
                                                 Empleado empleado0 = new();
                                                 Empleado seleccionado1 = empleado0.BuscarEmpleado(listaTallers[codigoTaller].listaEmpleado);
-                                                ordenSelect.idEmpleado.Add(seleccionado1.Id);
+                                                ordenSelect.IdEmpleado.Add(seleccionado1.Id);
                                                 Console.WriteLine("Para agregar otro empleado ingrese 1, para salir ingrese 0");
                                                 opcAddEmpleado = int.Parse(Console.ReadLine());
                                             } while (opcAddEmpleado!=0);
@@ -218,11 +249,20 @@ internal class Program
                                             }
                                             break;
                                         case 7:
+                                            OrdenAprobacion ord = new();
+                                            ord.MostrarOrden(ordenSelect, listaTallers[0].listaEmpleado);
+                                            Console.ReadKey();
+                                            break;
+                                        case 8:
+                                            //? Mostrar Orden Completa
+                                            Console.Clear();
+                                            OrdenServicio orda = new(); 
+                                            orda.MostrarOrdenCompleta(ordenSelect,listaTallers[0].listaClientes,listaTallers[0].listaEmpleado);
                                             break;
                                         default:
                                             break;
                                     }
-                                } while (opcionesSegundoMenu != 8);
+                                } while (opcionesSegundoMenu != 9);
                                 break;
                             case 3: 
                                 Console.Clear();
@@ -230,7 +270,7 @@ internal class Program
                                 Console.WriteLine("Primero seleccionar cliente ");
                                 Cliente clienteOpp = new();
                                 Cliente clienteSelect = clienteOpp.BuscarClienteXCC(listaTallers[codigoTaller].listaClientes);
-                                int indiceClien = listaTallers[0].listaClientes.FindIndex(x => x.id.Equals(clienteSelect.Id));
+                                int indiceClien = listaTallers[0].listaClientes.FindIndex(x => x.Cedula.Equals(clienteSelect.Cedula));
                                 OrdenServicio ordencita = new();
                                 ordencita.MostrarOrdenesSinTerminar(listaTallers[0].listaClientes[indiceClien].OrdenesServicio);
                                 break;
